@@ -1,0 +1,49 @@
+Task1:
+
+FUNCTION Dot_product(v1,v2:ARRAY_OF INTEGER[3]) : FLOAT
+VAR
+       i,j,p:INTEGER;
+       p:FLOAT;
+BEGIN
+     FOR i FROM 0 TO v1.length -1 STEP 1 DO
+        p:=p+v1[i]*v2[i];
+    END_FOR
+    RETURN p ;
+
+ALGORITHM Orthogonal
+VAR
+     v1,v2 : ARRAY_OF INTEGER[3];
+    p:=FLOAT;
+BEGIN
+    write("give vector 1");
+    Read(v1);
+    write("give vector 2");
+    Read(v2);
+   p:=Dot_product(v1,v2)
+  
+   IF (p=0) THEN
+       write(vectors are orthogonal)
+   ELSE
+       write( vectors are not orthogonal)
+   END_IF
+END
+
+Task2:
+
+ALGORITHM sort
+VAR
+    i:INTEGER;
+    currIndex: INTEGER;
+    j: INTEGER;
+BEGIN
+    FOR i FROM 1 TO ARRAY_OF type[length]; DO
+        currIndex = array[i];
+        j = i - 1;
+        WHILE (j >= 0 && array[j] > currIndex) DO
+            array[j + 1] = array[j];
+            j--;
+        END_WHILE
+        array[j + 1] = currIndex;
+    END_FOR
+    RETURN array;
+END
